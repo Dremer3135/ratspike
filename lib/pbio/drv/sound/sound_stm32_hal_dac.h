@@ -14,6 +14,9 @@
 
 #include STM32_H
 
+#define SOUND_RAMP_SMAPLE_COUNT 128
+#define SOUND_RAMP_SMAPLE_RATE 1024
+
 typedef struct {
     /** GPIO bank for amplifier enable signal. */
     GPIO_TypeDef *enable_gpio_bank;
@@ -36,6 +39,14 @@ typedef struct {
     /** The DMA interrupt. */
     IRQn_Type dma_irq;
 } pbdrv_sound_stm32_hal_dac_platform_data_t;
+
+typedef enum {
+    SOUND_STATE_STOPPED,
+    SOUND_STATE_RAMPING_UP,
+    SOUND_STATE_PLAYING,
+    SOUND_STATE_RAMPING_DOWN,
+} sound_state_t;
+
 
 /** Platform-specific data - defined in platform.c */
 extern const pbdrv_sound_stm32_hal_dac_platform_data_t pbdrv_sound_stm32_hal_dac_platform_data;

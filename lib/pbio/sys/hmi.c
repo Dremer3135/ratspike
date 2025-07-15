@@ -162,7 +162,9 @@ static PT_THREAD(update_left_right_button_wait_state(bool left_button_pressed, b
 }
 
 #endif // PBSYS_CONFIG_HMI_NUM_SLOTS
-
+/**
+ * Inits the human machine interface.
+*/
 void pbsys_hmi_init(void) {
     pbsys_status_light_init();
     pbsys_hub_light_matrix_init();

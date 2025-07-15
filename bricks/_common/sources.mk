@@ -188,6 +188,7 @@ PBIO_SRC_C = $(addprefix lib/pbio/,\
 	drv/watchdog/watchdog_stm32.c \
 	platform/$(PBIO_PLATFORM)/platform.c \
 	src/angle.c \
+	src/audio_generator.c \
 	src/battery.c \
 	src/color/conversion.c \
 	src/color/util.c \

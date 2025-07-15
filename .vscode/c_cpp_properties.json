@@ -1,9 +1,3 @@
-// https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference
-//
-// These configurations basically should say exactly what the makefiles do:
-// * include paths should be in same order as in makefiles
-// * defines are only needed for things defined in makefiles
-// * compiler options should match what is selected in the makefiles
 {
     "configurations": [
         {
@@ -53,7 +47,8 @@
                 "-fsingle-precision-constant"
             ],
             "cStandard": "c11",
-            "intelliSenseMode": "gcc-arm"
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc"
         },
         {
             "name": "ev3",
@@ -72,13 +67,13 @@
                 "${workspaceFolder}/lib/tiam1808/tiam1808/hw",
                 "${workspaceFolder}/lib/tiam1808/tiam1808/armv5",
                 "${workspaceFolder}/lib/tiam1808/tiam1808/armv5/am1808",
-                "${workspaceFolder}/lib/tiam1808/tiam1808/usblib",
+                "${workspaceFolder}/lib/tiam1808/tiam1808/usblib"
             ],
             "defines": [
                 "am1808",
                 "gcc",
                 "MICROPY_MODULE_FROZEN_MPY",
-                "MICROPY_ROM_TEXT_COMPRESSION",
+                "MICROPY_ROM_TEXT_COMPRESSION"
             ],
             "compilerArgs": [
                 "-Wall",
@@ -380,7 +375,8 @@
                 "${workspaceFolder}/lib/pbio/platform/test",
                 "${workspaceFolder}/lib/pbio/test",
                 "${workspaceFolder}/lib/pbio/test/build",
-                "${workspaceFolder}/lib/tinytest"
+                "${workspaceFolder}/lib/tinytest",
+                "${workspaceFolder}/micropython"
             ],
             "defines": [
                 "UNIX"

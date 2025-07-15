@@ -664,7 +664,7 @@ const pbdrv_sound_stm32_hal_dac_platform_data_t pbdrv_sound_stm32_hal_dac_platfo
     .dma_ch = DMA_CHANNEL_7,
     .dma_irq = DMA1_Stream5_IRQn,
     .tim = TIM6,
-    .tim_clock_rate = 48000000, // APB1: 48MHz
+    .tim_clock_rate = 96000000, // APB1 is 48MHz, but TIM6 clock is doubled to 96MHz
 };
 
 void HAL_DAC_MspInit(DAC_HandleTypeDef *hdac) {
