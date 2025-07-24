@@ -100,7 +100,8 @@ static pbio_error_t pbio_servo_update(pbio_servo_t *srv) {
         // and this would be enough in a run_until_overload-like scenario. But
         // for now we must limit the feedforward torque also, or it would never
         // get into the stall state at high speeds.
-        int32_t total_torque = pbio_int_math_clamp(feedback_torque + feedforward_torque, srv->control.settings.actuation_max_temporary);
+        int32_t total_torque = pbio_int_math_clamp(feedforward_torque, srv->control.settings.actuation_max_temporary);
+        // int32_t total_torque = pbio_int_math_clamp(feedback_torque + feedforward_torque, srv->control.settings.actuation_max_temporary);
 
         // Actuate the servo. For torque control, the torque payload is passed along. Otherwise payload is ignored.
         err = pbio_servo_actuate(srv, requested_actuation, total_torque);
