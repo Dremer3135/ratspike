@@ -99,12 +99,14 @@ pbsys_status_light_indication_pattern_ble[] = {
         (const pbsys_status_light_indication_pattern_element_t[]) {
         PBSYS_STATUS_LIGHT_INDICATION_PATTERN_FOREVER(PBIO_COLOR_NONE),
     },
-    // Two blue blinks, pause, then repeat.
+    // Three blue blinks, pause, then repeat.
     [PBSYS_STATUS_LIGHT_INDICATION_BLUETOOTH_BLE_ADVERTISING] =
         (const pbsys_status_light_indication_pattern_element_t[]) {
-        { .color = PBIO_COLOR_BLUE, .duration = 2 },
-        { .color = PBIO_COLOR_BLACK, .duration = 2 },
-        { .color = PBIO_COLOR_BLUE, .duration = 2 },
+        { .color = PBIO_COLOR_BLUE, .duration = 1 },
+        { .color = PBIO_COLOR_BLACK, .duration = 1 },
+        { .color = PBIO_COLOR_BLUE, .duration = 1 },
+        { .color = PBIO_COLOR_BLACK, .duration = 1 },
+        { .color = PBIO_COLOR_BLUE, .duration = 1 },
         { .color = PBIO_COLOR_BLACK, .duration = 22 },
         PBSYS_STATUS_LIGHT_INDICATION_PATTERN_REPEAT
     },

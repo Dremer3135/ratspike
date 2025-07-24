@@ -78,7 +78,7 @@ static void pb_type_Speaker_start_beep(uint32_t frequency, uint16_t sample_atten
     if (frequency == 0) {
         pb_type_Speaker_generate_line_wave();
     } else {
-        pbio_sound_generate_wave(waveform_data, 128, PBIO_SOUND_WAVE_TYPE_SINE, sample_attenuator);
+        pbio_sound_generate_wave(waveform_data, 128, PBIO_SOUND_WAVE_TYPE_SAW, sample_attenuator);
     }
 
     if (frequency < 64) {
